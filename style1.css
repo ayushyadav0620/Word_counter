@@ -1,72 +1,57 @@
-/* border box */
 
 html {
 	box-sizing: border-box;
 	-webkit-user-select: none;
-	/* Chrome all / Safari all */
 	-moz-user-select: none;
-	/* Firefox all */
 	-ms-user-select: none;
-	/* IE 10+ */
 	user-select: none;
-	/* Likely future */
   }
-  
   *,
   *:before,
   *:after {
 	box-sizing: inherit;
   }
-  
   b {
 	font-weight: bold;
   }
-  
-  
-  /* main app styles */
-  
   body {
 	width: 700px;
 	margin: 0 auto;
-	background-color: #FAFAFA;
+	background: linear-gradient(90deg, rgba(9,7,43,1) 0%, rgba(66,66,152,1) 49%, rgba(64,173,221,1) 100%);
 	font-family: 'Source Sans Pro', sans-serif;
-	color: #111;
   }
-  
   .container {
 	margin: 2% auto;
 	padding: 15px;
-	background-color: #FFFFFF;
+	background-color: #2a2b2980;
+	filter:contrast(200%);
 	-webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
 	box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
   }
-  
   h1 {
-	font-size: 3rem;
-	font-weight: 900;
-	text-align: center;
-	margin: 1% 0 3%;
+		font-size: 72px;
+		background: -webkit-linear-gradient(rgb(83, 97, 99), rgb(73, 180, 175));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-align: center;
   }
-  
   textarea {
 	width: 100%;
 	height: 250px;
 	padding: 10px;
-	border: 1px solid #d9d9d9;
+	border: 1px solid #eeebeb;
 	outline: none;
 	font-size: 1rem;
 	resize: none;
 	line-height: 1.5rem;
+	background-color: darkgray;
   }
-  
   textarea:hover {
 	border-color: #C0C0C0;
   }
-  
   textarea:focus {
 	border-color: #4D90FE;
   }
-  
   .output.row {
 	width: 100%;
 	border: 1px solid #DDD;
@@ -87,27 +72,12 @@ html {
 	font-size: 1.5rem;
   }
   
-  #readability {
-	width: 52%;
-	font-weight: bold;
-  }
-  
-  #readability:hover {
-	background-color: #4D90FE;
-	color: #FFF;
-	border-radius: 2px;
-	cursor: pointer;
-  }
-  
-  #readability:active {
-	background-color: #307AF3;
-  }
-  
   .keywords {
 	display: none;
 	margin: 4% 0 0;
 	font-size: 2rem;
 	font-weight: 900;
+	color: darkcyan;
   }
   
   .keywords ul {
@@ -125,11 +95,6 @@ html {
 	margin: 1%;
   }
   
-  
-  /* 
-  ** Making it responsive
-  */
-  
   @media (max-width: 750px) {
 	body {
 	  width: 600px;
@@ -146,7 +111,6 @@ html {
   }
   
   @media (max-width: 600px) {
-	/* rewriting old styles */
 	body {
 	  width: 95%;
 	}
@@ -155,7 +119,7 @@ html {
 	  background-color: #FFF;
 	}
 	.output.row div {
-	  display: block;
+	  display: inline-block;
 	  width: 100%;
 	  padding: 10px 15px;
 	  margin: 2% auto;
@@ -165,11 +129,6 @@ html {
 	}
 	.output.row span {
 	  font-size: 2rem;
-	}
-	#readability {
-	  width: 100%;
-	  font-size: 1.6rem;
-	  font-weight: 400;
 	}
 	.keywords {
 	  margin: 10% auto;
@@ -189,3 +148,72 @@ html {
 	  border: 1px solid #DDD;
 	}
   }
+  .animation-area {
+	background: linear-gradient(to left, #8942a8, #ba382f);
+}
+.box-area {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.box-area li {
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 25px;
+	height: 25px;
+	background: rgba(255, 255, 255, 0.2);
+	animation: animate 20s linear infinite;
+	bottom: -150px;
+}
+.box-area li:nth-child(1) {
+	left: 86%;
+	width: 80px;
+	height: 80px;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(2) {
+	left: 12%;
+	width: 30px;
+	height: 30px;
+	animation-delay: 1.5s;
+	animation-duration: 10s;
+}
+.box-area li:nth-child(3) {
+	left: 70%;
+	width: 100px;
+	height: 100px;
+	animation-delay: 5.5s;
+}
+.box-area li:nth-child(4) {
+	left: 42%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.box-area li:nth-child(5) {
+	left: 65%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(6) {
+	left: 15%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3.5s;
+}
+@keyframes animate {
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-800px) rotate(360deg);
+		opacity: 0;
+	}
+}
